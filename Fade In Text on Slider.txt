@@ -1,0 +1,41 @@
+######################################################
+##  		This goes in Global CSS		    ##
+######################################################
+
+
+ @-webkit-keyframes fadein {
+0% {opacity:0;}
+20% {opacity:1;}
+100% {opacity:1;}
+}
+@keyframes fadein {
+0% {opacity:0;}
+20% {opacity:1;}
+100% {opacity:1;}
+}
+
+[data-active="true"] .text, .rowGroup .row:first-child .text {
+-webkit-animation: fadein 6s 1 linear;
+animation: fadein 6s 1 linear;
+transition: transform 0.4s ease;
+            }
+
+.rowGroup .module.text {opacity:0;}
+
+.in-iframe .rowGroup .module.text{opacity:1!important;}
+
+
+
+######################################################
+##	This goes in Settings > HTML HEAD Tags	    ##
+######################################################
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+<script type="text/javascript">
+  $(function() {
+  if (window.self != window.top) {
+    $(document.body).addClass("in-iframe");
+  }
+});
+</script>
